@@ -1,0 +1,10 @@
+.dash-page { max-width: 900px; margin: 0 auto; padding: 1.5rem 1rem; }
+
+.dash-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+
+@media (max-width: 600px) { .dash-split { grid-template-columns: 1fr; } }

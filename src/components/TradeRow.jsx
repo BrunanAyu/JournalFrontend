@@ -1,0 +1,37 @@
+import "./TradeRow.css";
+
+export default function TradeRow({ trade: t, onDelete, compact }) {
+  const pnlPos  = (t.pnl || 0) >= 0;
+  const dateStr = t.date ? new Date(t.date).toLocaleDateString() : "";
+
+  return (
+    <div className={`trade-row ${compact ? "compact" : ""}`}>
+      {/* Left: pair + meta */}
+      <div className="tr-left">
+        <div className="tr-top">
+          <span className="tr-pair">{t.pair}</span>
+          <span className={`badge badge-${t.direction === "Buy" ? "buy" : "sell"}`}>{t.direction}</span>
+          <span className={`badge badge-${t.result === "Win" ? "win" : t.result === "Loss" ? "loss" : "be"}`}>{t.result}</span>
+          <span className={`badge badge-${t.type === "backtest" ? "bt" : "rt"}`}>{t.type}</span>
+        </div>
+        <div className="tr-meta">
+          {dateStr} · {t.setup} · {t.timeframe} · {t.session || "—"} · {t.emotion}
+          {t.notes && <span className="tr-notes"> · {t.notes}</span>}
+        </div>
+      </div>
+
+      {/* Right: P&L + prices + delete */}
+      <div className="tr-right">
+        <div className={`tr-pnl ${pnlPos ? "pos" : "neg"}`}>
+          {pnlPos ? "+" : ""}${(t.pnl || 0).toFixed(2)}
+        </div>
+        <div className="tr-prices">{t.entry} → {t.exit}</div>
+        {onDelete && (
+          <button className="btn btn-danger" onClick={() => onDelete(t._id)}>
+            Delete
+          </button>
+        )}
+      </div>
+    </div>
+  );
+}

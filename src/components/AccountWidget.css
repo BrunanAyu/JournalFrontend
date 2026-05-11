@@ -1,0 +1,57 @@
+.aw-setup-prompt {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 1.25rem;
+}
+.aw-setup-prompt p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+.aw-card { margin-bottom: 1.25rem; }
+
+.aw-balance-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 6px;
+}
+
+.aw-label   { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .07em; margin-bottom: 4px; }
+.aw-balance { font-family: var(--font-h); font-size: 28px; font-weight: 700; color: var(--text); }
+
+.aw-actions { display: flex; gap: 6px; }
+
+.aw-pnl { font-size: 13px; margin-bottom: 1rem; }
+
+.aw-form { display: flex; flex-direction: column; gap: 8px; padding: 1rem 0; border-top: 1px solid var(--border); }
+
+.aw-history { border-top: 1px solid var(--border); padding-top: 1rem; }
+
+.aw-hist-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 12px;
+}
+.aw-hist-row:last-child { border-bottom: none; }
+
+.aw-hist-type {
+  display: inline-block;
+  padding: 1px 7px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-right: 6px;
+}
+.aw-hist-type.initial    { background: rgba(200,255,0,.1);   color: var(--accent); }
+.aw-hist-type.deposit    { background: rgba(0,230,118,.1);   color: var(--green); }
+.aw-hist-type.withdrawal { background: rgba(255,75,75,.1);   color: var(--red); }
+.aw-hist-type.trade      { background: rgba(255,255,255,.06); color: var(--muted); }
+
+.aw-hist-note { color: var(--muted); }

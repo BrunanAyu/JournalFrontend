@@ -1,0 +1,28 @@
+.trade-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.trade-row:last-child { border-bottom: none; }
+.trade-row.compact { padding: 8px 0; }
+
+.tr-left  { flex: 1; min-width: 0; }
+.tr-right { text-align: right; flex-shrink: 0; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+
+.tr-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.tr-pair  { font-family: var(--font-h); font-size: 13px; font-weight: 600; color: var(--text); }
+.tr-meta  { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.tr-notes { color: var(--text); opacity: .7; }
+
+.tr-pnl    { font-family: var(--font-h); font-size: 14px; font-weight: 700; }
+.tr-prices { font-size: 11px; color: var(--muted); }
