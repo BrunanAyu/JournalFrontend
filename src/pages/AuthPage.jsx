@@ -30,6 +30,7 @@ export default function AuthPage() {
       setMsg({ text: err.response?.data?.message || "Error. Try again.", type: "err" });
     } finally {
       setBusy(false);
+      navigate("//auth/login");
     }
   };
 
