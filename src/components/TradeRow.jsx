@@ -1,6 +1,6 @@
 import "./TradeRow.css";
 
-export default function TradeRow({ trade: t, onDelete, compact }) {
+export default function TradeRow({ trade: t, onDelete, onEdit, compact }) {
   const pnlPos = (t.pnl || 0) >= 0;
   const dateStr = t.date ? new Date(t.date).toLocaleDateString() : "";
 
