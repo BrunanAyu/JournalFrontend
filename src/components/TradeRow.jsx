@@ -1,7 +1,7 @@
 import "./TradeRow.css";
 
 export default function TradeRow({ trade: t, onDelete, compact }) {
-  const pnlPos  = (t.pnl || 0) >= 0;
+  const pnlPos = (t.pnl || 0) >= 0;
   const dateStr = t.date ? new Date(t.date).toLocaleDateString() : "";
 
   return (
@@ -26,11 +26,18 @@ export default function TradeRow({ trade: t, onDelete, compact }) {
           {pnlPos ? "+" : ""}${(t.pnl || 0).toFixed(2)}
         </div>
         <div className="tr-prices">{t.entry} → {t.exit}</div>
-        {onDelete && (
-          <button className="btn btn-danger" onClick={() => onDelete(t._id)}>
-            Delete
-          </button>
-        )}
+        <div style={{ display: "flex", gap: 6, marginTop: 4 }}>
+          {onEdit && (
+            <button className="btn btn-ghost" style={{ fontSize: 11, padding: "4px 10px" }} onClick={() => onEdit(t)}>
+              Edit
+            </button>
+          )}
+          {onDelete && (
+            <button className="btn btn-danger" onClick={() => onDelete(t._id)}>
+              Delete
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
