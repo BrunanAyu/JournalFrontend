@@ -1,6 +1,6 @@
 import { useState } from "react";
 import api from "../api/axios";
-import "./UpdateModal.css";
+import "./updateModal.css";
 
 const PAIRS      = ["EUR/USD","GBP/USD","USD/JPY","USD/CHF","AUD/USD","USD/CAD","NZD/USD","EUR/GBP","EUR/JPY","GBP/JPY"];
 const SETUPS     = ["Breakout","Trend follow","Reversal","Support/Resistance","News trade","ICT","SMC","Other"];
