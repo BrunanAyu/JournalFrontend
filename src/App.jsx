@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router";
+import { BrowserRouter, Routes, Route } from "react-router";
 import "./styles/global.css";
 
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -8,6 +8,7 @@ import Dashboard      from "./pages/Dashboard";
 import LogTrade       from "./pages/LogTrade";
 import History        from "./pages/History";
 import Review         from "./pages/Review";
+import NotFound       from "./pages/NotFound";
 
 // Layout wraps protected pages with the navbar
 function Layout({ children }) {
@@ -49,7 +50,7 @@ export default function App() {
         } />
 
         {/* Fallback */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>
   );

@@ -1,0 +1,37 @@
+.not-found-page {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 1.5rem;
+}
+
+.not-found-box {
+  width: min(100%, 440px);
+  text-align: center;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r2);
+  padding: 3rem 2rem;
+}
+
+.not-found-code {
+  color: var(--accent);
+  font-family: var(--font-h);
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+
+.not-found-box h1 {
+  font-family: var(--font-h);
+  font-size: 24px;
+  margin-bottom: .5rem;
+}
+
+.not-found-box p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
