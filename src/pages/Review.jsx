@@ -72,6 +72,7 @@ export default function Review() {
             <option value="all">All types</option>
             <option value="backtest">Backtest</option>
             <option value="realtime">Real-time</option>
+            <option value="missed">Missed</option>
           </select>
         </div>
       </div>
@@ -106,7 +107,7 @@ export default function Review() {
                     <div
                       key={t._id}
                       className={`review-trade-item ${active?._id === t._id ? "selected" : ""}`}
-                      onClick={() => t.pic && setActive(t)}
+                      onClick={() => setActive(t)}
                     >
                       <TradeRow trade={t} compact />
                       {t.pic && <div className="has-img">📸 chart</div>}
@@ -116,31 +117,29 @@ export default function Review() {
 
                 {/* Right: image + notes panel */}
                 <div className="review-panel">
-                  {active?.pic ? (
+                  {active ? (
                     <>
-                      <div className="review-img-wrap">
-                        <img src={active.pic} alt="chart" />
-                      </div>
+                      {active.pic && <div className="review-img-wrap"><img src={active.pic} alt="chart" /></div>}
                       <div className="card review-detail">
                         <div className="rd-header">
                           <span className="tr-pair">{active.pair}</span>
-                          <span className={`badge badge-${active.direction === "Buy" ? "buy" : "sell"}`}>{active.direction}</span>
-                          <span className={`badge badge-${active.result === "Win" ? "win" : active.result === "Loss" ? "loss" : "be"}`}>{active.result}</span>
+                          {active.direction && <span className={`badge badge-${active.direction === "Buy" ? "buy" : "sell"}`}>{active.direction}</span>}
+                          {active.result && <span className={`badge badge-${active.result === "Win" ? "win" : active.result === "Loss" ? "loss" : "be"}`}>{active.result}</span>}
                           <span className={`rd-pnl ${(active.pnl||0) >= 0 ? "pos" : "neg"}`}>
                             {(active.pnl||0) >= 0 ? "+" : ""}${(active.pnl||0).toFixed(2)}
                           </span>
                         </div>
                         <div className="rd-grid">
                           <Kv k="Date"      v={new Date(active.date).toLocaleDateString()} />
-                          <Kv k="Entry"     v={active.entry} />
-                          <Kv k="Exit"      v={active.exit} />
-                          <Kv k="Lot"       v={active.lot} />
+                          <Kv k="Entry"     v={active.entry || "—"} />
+                          <Kv k="Exit"      v={active.exit || "—"} />
+                          <Kv k="Lot"       v={active.lot || "—"} />
                           <Kv k="SL"        v={active.sl || "—"} />
                           <Kv k="TP"        v={active.tp || "—"} />
-                          <Kv k="Setup"     v={active.setup} />
-                          <Kv k="Timeframe" v={active.timeframe} />
-                          <Kv k="Session"   v={active.session} />
-                          <Kv k="Emotion"   v={active.emotion} />
+                          <Kv k="Setup"     v={active.setup || "—"} />
+                          <Kv k="Timeframe" v={active.timeframe || "—"} />
+                          <Kv k="Session"   v={active.session || "—"} />
+                          <Kv k="Emotion"   v={active.emotion || "—"} />
                           <Kv k="Type"      v={active.type} />
                           <Kv k="Entry time" v={active.entryTime || "—"} />
                           <Kv k="Exit time"  v={active.exitTime  || "—"} />

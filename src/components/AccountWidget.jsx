@@ -98,7 +98,7 @@ export default function AccountWidget() {
       {/* Balance history */}
       <div className="aw-history">
         <div className="section-lbl" style={{ marginBottom: 8 }}>Balance history</div>
-        {account.history?.slice().reverse().slice(0, 10).map((h, i) => (
+        {account.history?.slice().reverse().slice(0, 5).map((h, i) => (
           <div key={i} className="aw-hist-row">
             <div>
               <span className={`aw-hist-type ${h.type}`}>{h.type}</span>

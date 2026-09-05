@@ -20,7 +20,7 @@ export default function Dashboard() {
         api.get("/trades"),
       ]);
       setStats(sRes.data);
-      setRecent(tRes.data.slice(0, 8));
+      setRecent(tRes.data.filter(trade => trade.type !== "missed").slice(0, 5));
     } catch { setError("Failed to load data."); }
     finally   { setLoading(false); }
   };

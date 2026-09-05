@@ -6,7 +6,7 @@ import "./History.css";
 
 export default function History() {
   const [trades, setTrades] = useState([]);
-  const [filter, setFilter] = useState("all"); // all | backtest | realtime
+  const [filter, setFilter] = useState("all"); // all | backtest | realtime | missed
   const [loading, setLoading] = useState(true);
   const [editing, setEditing] = useState(null); // trade being edited
   const [error, setError] = useState("");
@@ -48,7 +48,7 @@ export default function History() {
 
       {/* Filter tabs */}
       <div className="hist-tabs">
-        {[["all", "All"], ["backtest", "Backtest"], ["realtime", "Real-time"]].map(([v, l]) => (
+        {[["all", "All"], ["backtest", "Backtest"], ["realtime", "Real-time"], ["missed", "Missed"]].map(([v, l]) => (
           <button key={v} className={`hist-tab ${filter === v ? "active" : ""}`} onClick={() => setFilter(v)}>
             {l}
           </button>

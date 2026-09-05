@@ -129,6 +129,7 @@ label {
 .badge-be    { background: rgba(255,255,255,.07); color: var(--muted); }
 .badge-bt    { background: rgba(200,255,0,.1);   color: var(--accent); border: 1px solid rgba(200,255,0,.2); }
 .badge-rt    { background: rgba(0,212,255,.1);   color: var(--accent2); border: 1px solid rgba(0,212,255,.2); }
+.badge-missed { background: rgba(255,179,0,.1); color: var(--warn); border: 1px solid rgba(255,179,0,.2); }
 
 /* P&L colours */
 .pos { color: var(--green); }
